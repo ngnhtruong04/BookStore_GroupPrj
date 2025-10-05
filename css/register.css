@@ -1,0 +1,160 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Toàn trang */
+body {
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: linear-gradient(135deg, #8B7D6B, #D4A5A5, #F5E6D3);
+}
+
+/* Khung chính */
+.register-container {
+    background: #FEFCF7;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(139, 125, 107, 0.3);
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Tiêu đề */
+.register-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    color: #8B7D6B;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Form */
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Nhóm input */
+.register-form__group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.register-form__label {
+    color: #8B7D6B;
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.register-form__input,
+.register-form__select {
+    padding: 12px 15px;
+    border: 2px solid #D4A5A5;
+    border-radius: 8px;
+    background: #FEFCF7;
+    font-size: 15px;
+    color: #8B7D6B;
+    transition: all 0.3s ease;
+}
+
+.register-form__input::placeholder {
+    color: #D4A5A5;
+    font-style: italic;
+}
+
+.register-form__input:focus,
+.register-form__select:focus {
+    outline: none;
+    border-color: #8B7D6B;
+    background: #F5E6D3;
+    box-shadow: 0 0 5px rgba(139, 125, 107, 0.4);
+}
+
+.register-form__select {
+    cursor: pointer;
+}
+
+/* Nút đăng ký */
+.register-form__button {
+    background: linear-gradient(135deg, #8B7D6B, #A68B5B);
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.register-form__button:hover {
+    background: linear-gradient(135deg, #A68B5B, #8B7D6B);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(139, 125, 107, 0.3);
+}
+
+.register-form__button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Link đăng nhập */
+.register-login-link {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #D4A5A5;
+    font-size: 14px;
+}
+
+.register-login-link a {
+    color: #8B7D6B;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.register-login-link a:hover {
+    color: #A68B5B;
+    text-decoration: underline;
+}
+
+/* Lỗi */
+.register-form__error {
+    color: #D2691E;
+    font-size: 12px;
+    display: none;
+}
+
+.register-form__input.error,
+.register-form__select.error {
+    border-color: #D2691E;
+    background-color: #ffe5e5;
+}
+
+/* Responsive cho màn hình nhỏ */
+@media (max-width: 600px) {
+    .register-container {
+        padding: 30px 20px;
+    }
+
+    .register-title {
+        font-size: 24px;
+    }
+
+    .register-form__input,
+    .register-form__select {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+}
