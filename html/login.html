@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/stylee.css" />
+  </head>
+  <body>
+    <a href="#" id="open-auth" style="display: none">Tài khoản</a>
+
+    <div class="auth-overlay" id="auth-overlay" hidden>
+      <div class="auth-modal" role="dialog" aria-modal="true">
+        <button class="auth-close" id="auth-close" aria-label="Đóng">✕</button>
+
+        <div class="auth-tabs">
+          <button class="auth-tab active">Đăng nhập</button>
+        </div>
+
+        <form class="auth-panel" id="panel-login" novalidate>
+          <label class="auth-label">Số điện thoại/Email</label>
+          <div class="auth-field">
+            <input
+              type="text"
+              id="login-id"
+              placeholder="Nhập số điện thoại hoặc email"
+            />
+          </div>
+
+          <label class="auth-label">Mật khẩu</label>
+          <div class="auth-field">
+            <input
+              type="password"
+              id="login-pass"
+              placeholder="Nhập mật khẩu"
+            />
+            <button type="button" class="toggle-pass" data-target="login-pass">
+              Hiện
+            </button>
+          </div>
+
+          <div class="auth-row">
+            <a class="auth-link danger" href="#">Quên mật khẩu?</a>
+          </div>
+
+          <button
+            class="auth-btn primary"
+            id="btn-login"
+            type="submit"
+            disabled
+          >
+            Đăng nhập
+          </button>
+          <button
+            class="auth-btn ghost danger-outline"
+            type="button"
+            id="btn-skip"
+          >
+            Bỏ qua
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      const overlay = document.getElementById("auth-overlay");
+      const accountLink = document.querySelector(".nav a:nth-child(3)");
+      const closeBtn = document.getElementById("auth-close");
+      const skipBtn = document.getElementById("btn-skip");
+
+      if (accountLink)
+        accountLink.addEventListener("click", (e) => {
+          e.preventDefault();
+          overlay.hidden = false;
+        });
+      [closeBtn, skipBtn].forEach(
+        (b) => b && b.addEventListener("click", () => (overlay.hidden = true))
+      );
+      overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) overlay.hidden = true;
+      });
+
+      document.querySelector(".toggle-pass").addEventListener("click", (e) => {
+        const input = document.getElementById(e.target.dataset.target);
+        const show = input.type === "password";
+        input.type = show ? "text" : "password";
+        e.target.textContent = show ? "Ẩn" : "Hiện";
+      });
+
+      const form = document.getElementById("panel-login");
+      const btn = document.getElementById("btn-login");
+      form.addEventListener("input", () => {
+        const filled = [...form.querySelectorAll("input")].every(
+          (i) => i.value.trim().length > 0
+        );
+        btn.disabled = !filled;
+      });
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        alert("Đăng nhập thành công (demo)");
+      });
+    </script>
+  </body>
+</html>
