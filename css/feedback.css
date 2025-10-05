@@ -1,0 +1,18 @@
+body {
+  background-color: #f8f9fa;
+}
+.contact-card {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.btn-send {
+  background-color: #007bff;
+  color: white;
+}
+.btn-send:hover {
+  background-color: #0056b3;
+}

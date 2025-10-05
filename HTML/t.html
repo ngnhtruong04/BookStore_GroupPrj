@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liên hệ</title>
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+  <script src="../bootstrap/js/bootstrap.js"></script>
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .contact-card {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 30px;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .btn-send {
+      background-color: #007bff;
+      color: white;
+    }
+    .btn-send:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="contact-card">
+      <h3 class="text-center mb-4">Liên hệ với chúng tôi</h3>
+      <form action="https://formsubmit.co/your-email@gmail.com" method="POST">
+        <!-- Không cần backend, FormSubmit sẽ tự gửi về email bạn -->
+        
+        <!-- Tên -->
+        <div class="mb-3">
+          <label for="name" class="form-label">Họ và tên</label>
+          <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+
+        <!-- Số điện thoại -->
+        <div class="mb-3">
+          <label for="phone" class="form-label">Số điện thoại</label>
+          <input type="tel" class="form-control" id="phone" name="phone">
+        </div>
+
+        <!-- Nội dung -->
+        <div class="mb-3">
+          <label for="message" class="form-label">Nội dung</label>
+          <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+        </div>
+
+        <!-- Nút gửi -->
+        <button type="submit" class="btn btn-send w-100">Gửi liên hệ</button>
+
+        <!-- Ẩn xác thực spam -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
+      </form>
+    </div>
+  </div>
+</body>
+</html>

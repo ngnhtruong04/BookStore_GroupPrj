@@ -1,0 +1,13 @@
+h4 {
+    color: rgb(227, 200, 202);
+}
+img {
+    width: 90px;
+    height: 90px;
+}
+.middle_col  {
+    position: fixed;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
