@@ -1,0 +1,583 @@
+:root {
+  --primary: white;
+  --accent: #d8978a;
+  --muted: #f2f4f5;
+  --card-border: #ececec;
+  --max-width: 1200px;
+  --text-dark: #222; /* Màu chữ chính */
+  --text-muted: #777; /* Màu xám cho tác giả */
+  --sale-color: #e74c3c; /* Màu đỏ cho khuyến mãi, dùng màu đỏ chuẩn thay vì dc3545 */
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: sans-serif;
+  color: #222;
+  background: #ffffff;
+}
+/* ===== TOP BANNER ===== */
+.top-banner img {
+  /* background: #e74c3c;  */
+  /* color: #fff; */
+  width: 100%; /* tự co giãn theo chiều rộng trang */
+  max-height: 100px; /* đặt chiều cao tối đa */
+  object-fit: cover; /* cắt ảnh cho vừa khung mà không méo */
+}
+
+/* ===== HEADER ===== */
+.header {
+  background: var(--primary);
+  color: #a9766c;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.logo .book-icon {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 6px;
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.search-bar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.search-bar input {
+  flex: 1;
+  /* width: 100%; */
+  height: 44px;
+  padding: 10px 16px;
+  border-radius: 8px 0 0 8px;
+  border: 1.5px solid #e4bcb4;
+  font-size: 15px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  outline: none;
+}
+.search-bar .search-btn {
+  height: 44px;
+  padding: 0 18px;
+  border: none;
+  background: #e4bcb4; /* đỏ */
+  color: #1f1d1d;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-bar .search-btn:hover {
+  background: #ba9790; /* đỏ đậm hơn khi hover */
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 13px;
+}
+.icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #1f1d1d;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  width: 64px;
+}
+.icon-item i {
+  font-size: 18px;
+}
+.icon-item span {
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}
+
+/* account dropdown */
+.account {
+  position: relative;
+}
+.account-dropdown {
+  display: none;
+  position: absolute;
+  top: 42px;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  min-width: 140px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  z-index: 99;
+}
+.account-dropdown a {
+  display: block;
+  padding: 8px 12px;
+  color: #333;
+  text-decoration: none;
+}
+.account-dropdown a:hover {
+  background: #f6f6f6;
+}
+.account:hover .account-dropdown {
+  display: block;
+}
+
+/* ===== NAV (danh mục ngang) ===== */
+/* ===== NAV (danh mục ngang) ===== */
+.nav {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: center;
+  display: flex;
+  padding: 10px 0;
+  font-weight: 600;
+}
+
+.menu {
+  position: relative;
+  flex-grow: 1;
+  text-align: center;
+}
+
+/* link chính trong menu */
+.menu > a {
+  color: #1f1d1d;
+
+  text-decoration: none;
+  padding: 8px 0;
+  width: 100%;
+  /* display: inline-flex; */
+  display: block;
+  border-right: 1px solid rgb(183, 181, 181);
+  /* align-items: center; */
+  /* gap: 6px; */
+  transition: color 0.2s ease;
+  position: relative;
+  z-index: 2; /* giữ link nổi lên trên dropdown */
+}
+/*  Thêm quy tắc loại bỏ border cho menu cuối cùng */
+.nav > .menu:last-child > a {
+  border-right: none;
+}
+
+/* thêm mũi tên cho những menu có dropdown */
+.menu.has-dropdown > a::after {
+  content: "▾";
+  font-size: 12px;
+  margin-left: 4px;
+  transition: transform 0.2s ease;
+}
+
+/* hover đổi màu chữ */
+.menu > a:hover {
+  color: var(--accent);
+}
+
+/* khi hover vào menu có dropdown thì mũi tên quay lên */
+.menu.has-dropdown:hover > a::after {
+  transform: rotate(180deg);
+}
+
+/* dropdown */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  min-width: 220px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  padding: 8px 0;
+  z-index: 1000;
+}
+
+/* tiêu đề trong dropdown */
+.dropdown-title {
+  font-weight: bold;
+  padding: 8px 12px;
+  border-bottom: 1px solid #eee;
+  color: #222;
+}
+
+/* item trong dropdown */
+.dropdown a {
+  display: block;
+  padding: 8px 12px;
+  color: #333;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.dropdown a:hover {
+  background: #f5f5f5;
+  color: var(--accent);
+}
+
+/* hiện dropdown khi hover menu */
+.menu:hover .dropdown {
+  display: block;
+}
+.banners-wrap img {
+  width: 100%;
+}
+
+/* ===== CONTENT (sections sách) ===== */
+.container {
+  max-width: var(--max-width);
+  margin: 24px auto;
+  padding: 0 20px 40px;
+}
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0 16px;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+}
+.section-title i {
+  color: #a9766c;
+  font-size: 20px;
+}
+/* Định dạng nút Xem tất cả */
+.view-all {
+  font-size: 15px;
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.view-all:hover {
+  background: #f6f6f6;
+  text-decoration: underline;
+}
+/* Lớp bao ngoài để chứa list và các nút điều hướng */
+.book-list-wrapper {
+  position: relative;
+  overflow-x: hidden; /* Ẩn thanh cuộn mặc định */
+  padding: 0 40px; /* Thêm padding cho các nút điều hướng */
+}
+
+/* Các nút điều hướng */
+.book-list-wrapper .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #ddd;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  transition: background 0.2s;
+}
+.book-list-wrapper .arrow:hover {
+  background: #fff;
+  border-color: var(--accent);
+}
+.book-list-wrapper .arrow-left {
+  left: 0;
+}
+.book-list-wrapper .arrow-right {
+  right: 0;
+}
+
+/* THAY THẾ grid bằng flexbox */
+.book-grid {
+  display: flex; /* SỬ DỤNG FLEXBOX */
+  overflow-x: scroll; /* KÍCH HOẠT THANH CUỘN NGANG */
+  gap: 16px;
+  padding-bottom: 10px; /* Thêm padding cho thanh cuộn ngang */
+  scroll-snap-type: x mandatory; /* Giúp các sách dừng lại ngay ngắn */
+  -webkit-overflow-scrolling: touch; /* Tăng trải nghiệm cuộn trên iOS */
+  scrollbar-width: none; /* Ẩn thanh cuộn trên Firefox */
+}
+/* Ẩn thanh cuộn trên WebKit (Chrome, Safari) */
+.book-grid::-webkit-scrollbar {
+  display: none;
+}
+
+/* Điều chỉnh card cho bố cục ngang */
+.book-card {
+  flex-shrink: 0; /* KHÔNG CHO PHÉP CARD CO LẠI */
+  width: 170px; /* Đặt chiều rộng cố định cho mỗi card, bạn có thể điều chỉnh */
+  background: #fff;
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 10px 10px 15px; /* Giảm padding để card nhỏ hơn */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 280px; /* Tăng min-height cho card để đồng đều */
+  scroll-snap-align: start; /* Giúp cuộn dừng ngay đầu card */
+}
+.book-link {
+  text-decoration: none; /* RẤT QUAN TRỌNG: Loại bỏ gạch chân mặc định của thẻ <a> */
+  color: inherit;
+  flex-shrink: 0;
+  width: 170px;
+  scroll-snap-align: start; /* Giúp cuộn dừng ngay đầu card */
+}
+
+/* HIỆU ỨNG HOVER KHI DI CHUỘT VÀO CARD */
+.book-link:hover .book-card {
+  transform: translateY(-5px); /* Nâng card lên một chút */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Đổ bóng mạnh hơn */
+  border-color: var(--accent); /* Viền card đổi màu hồng */
+}
+.book-card img {
+  width: 100%; /* Chiếm hết chiều rộng của card */
+  max-width: 150px;
+  height: auto; /* Tự động tính toán chiều cao */
+  object-fit: contain;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  background: #fafafa;
+}
+.book-card .title {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 4px;
+  overflow: hidden;
+  /* text-overflow: ellipsis; */
+  color: var(--text-dark);
+  text-decoration: none;
+  display: -webkit-box;
+  /* -webkit-line-clamp: 2; */
+  -webkit-box-orient: vertical;
+  height: 36px; /* Chiều cao cố định cho 2 dòng */
+  transition: color 0.2s, text-decoration 0.2s;
+  width: 100%; /* Đảm bảo căn chỉnh đều */
+}
+/* Hiệu ứng di chuột cho tiêu đề: Đổi sang màu accent và gạch chân */
+.book-link:hover .book-card .title {
+  color: var(--accent);
+}
+.book-card .author {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  text-decoration: none;
+}
+
+/* Giá (Price) */
+.book-card .price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  text-decoration: none; /* Đảm bảo không gạch chân */
+  margin-top: auto;
+}
+
+/* Xử lý giá cũ trong phần Khuyến mãi */
+.book-card .price s {
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: line-through;
+  margin-right: 5px;
+  font-size: 0.9rem;
+}
+
+/* Giá mới trong phần Khuyến mãi */
+/* .book-card .price .sale-price {
+            color: var(--sale-color); 
+            font-weight: 700;
+            text-decoration: none;
+        } */
+
+/* THÊM TÁC GIẢ VÀ ĐÁNH GIÁ SAO VÀO CARD (NHƯ TRONG ẢNH MẪU) */
+.rating {
+  color: gold;
+  font-size: 10px;
+  margin-top: 4px;
+}
+/* CẬP NHẬT: Khuyến mãi / Sự kiện banner nhỏ cuối trang (Dùng ảnh) */
+.event-banner {
+  height: 500px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Quan trọng để ảnh không tràn ra ngoài border-radius */
+  display: block; /* Đảm bảo thẻ <a> chiếm hết không gian */
+}
+
+.event-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Đảm bảo ảnh cover hết không gian mà không bị méo */
+  display: block;
+  transition: transform 0.3s;
+}
+/* ===== FOOTER ===== */
+footer {
+  background-color: #e4bcb4; /* Màu nền hồng nhạt */
+  color: #1f1d1d;
+  padding: 40px 20px; /* Tăng padding */
+  font-size: 14px;
+}
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.5fr 1fr; /* 4 cột với tỉ lệ phù hợp */
+  gap: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.footer-column h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+.footer-column a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: color 0.2s;
+}
+.footer-column a:hover {
+  color: var(--accent);
+}
+
+/* Cột 1: Thông tin liên hệ */
+.contact-info {
+  font-size: 14px;
+  line-height: 1.6;
+}
+.contact-info .logo-large {
+  font-size: 24px;
+  font-weight: 900;
+  color: #222;
+  margin-bottom: 15px;
+}
+.contact-info p {
+  margin: 0;
+  margin-bottom: 4px;
+}
+
+/* Cột 4: Mạng xã hội */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  background: #222;
+  /* color: var(--footer-bg); */
+
+  border-radius: 50%;
+  font-size: 16px;
+  /* QUAN TRỌNG: Loại bỏ transition và hover đổi màu nền/chữ */
+  transition: box-shadow 0.15s, transform 0.15s;
+  /* transition: background 0.2s; */
+}
+
+/* 2. ICON BÊN TRONG LUÔN LÀ MÀU HỒNG (ACCENT COLOR) */
+.social-icons a i {
+  color: var(--accent);
+}
+
+/* HIỆU ỨNG CHO ICON - KHÔNG ĐỔI MÀU GỐC */
+.social-icons a:hover {
+  /* Chỉ thêm hiệu ứng nổi nhẹ thay vì đổi màu */
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5), 0 0 0 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Bản quyền */
+.copyright {
+  text-align: center;
+  padding-top: 15px;
+  font-size: 13px;
+  color: #555;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .banner {
+    height: 160px;
+    font-size: 18px;
+  }
+  .book-card img {
+    width: 100px;
+    height: 140px;
+  }
+  .search-bar input {
+    height: 40px;
+  }
+  .icon-item {
+    width: 48px;
+  }
+}
+@media (max-width: 700px) {
+  .banners {
+    flex-direction: column;
+  }
+  .banner {
+    height: 160px;
+  }
+  .nav {
+    font-size: 14px;
+    padding: 8px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .header {
+    padding: 10px;
+  }
+}
