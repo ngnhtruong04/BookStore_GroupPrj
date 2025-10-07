@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Thanh toán - BookStore</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-top">
+            <div class="header-inner">
+                <div class="brand">BookStore.com</div>
+                <div class="row">
+                    <div class="promo-text">HỌC XỊN GIÁ MỊN CÙNG BOOKSTORE</div>
+                    <div class="promo-offer">GIẢM ĐẾN 35%</div>
+                </div>
+            </div>
+        </div>
+        <nav class="nav-bar">
+            <div class="nav-inner">
+                <div class="icon-btn" aria-hidden="true">☰</div>
+                <div class="search-bar">
+                    <input class="search-input" placeholder="Tìm kiếm sách..." />
+                    <button class="search-btn">🔍</button>
+                </div>
+                <div class="row">
+                    <a href="login.html" class="icon-btn">🔑</a>
+                    <a href="register.html" class="icon-btn">👤</a>
+                    <a href="cart.html" class="icon-btn">🛒</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb-nav">
+        <div class="container">
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+                <a href="home.html">Trang chủ</a>
+                <a href="cart.html">Giỏ hàng</a>
+                <span class="current">Thanh toán</span>
+                <div class="breadcrumb-links">
+                    <a href="list.html">📚 Sách</a>
+                    <a href="introduce.html">ℹ️ Giới thiệu</a>
+                    <a href="feedback.html">💬 Liên hệ</a>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="main-grid">
+            <!-- Left column (steps) -->
+            <div>
+                <!-- Shipping Address -->
+                <section class="card checkout-left">
+                    <h2 class="section-title">Địa chỉ giao hàng</h2>
+
+                    <div class="address-card">
+                        <input type="radio" name="address" class="address-radio" checked>
+                        <div style="flex:1;">
+                            <div style="font-weight:700; color:var(--color-text)">Nguyễn Nhật Trường</div>
+                            <div class="muted">Q.12, TP.HCM • 0978654321</div>
+                        </div>
+                        <a href="#" style="color:var(--color-primary); text-decoration:none; font-weight:700;">Sửa</a>
+                    </div>
+
+                    <div class="add-address">+ Giao hàng đến địa chỉ khác</div>
+                </section>
+
+                <!-- Shipping method -->
+                <section class="card checkout-left">
+                    <h2 class="section-title">Phương thức vận chuyển</h2>
+                    <div class="shipping-option">
+                        <div>
+                            <div class="shipping-name">Giao hàng tiêu chuẩn</div>
+                            <div class="delivery muted">Dự kiến giao: 2-4 ngày</div>
+                        </div>
+                        <div class="shipping-price">20.000 ₫</div>
+                    </div>
+
+                    <div style="height:8px;"></div>
+
+                    <div class="shipping-option">
+                        <div>
+                            <div class="shipping-name">Giao nhanh</div>
+                            <div class="delivery muted">1-2 ngày</div>
+                        </div>
+                        <div class="shipping-price">45.000 ₫</div>
+                    </div>
+                </section>
+
+                <!-- Payment methods -->
+                <section class="card checkout-left">
+                    <h2 class="section-title">Phương thức thanh toán</h2>
+
+                    <div class="payment-option" data-method="cod">
+                        <input type="radio" name="payment" checked>
+                        <div style="flex:1;">
+                            <div class="payment-name">Thanh toán khi nhận hàng (COD)</div>
+                        </div>
+                    </div>
+
+                    <div class="payment-option" data-method="card">
+                        <input type="radio" name="payment">
+                        <div style="flex:1;">
+                            <div class="payment-name">Thẻ quốc tế (Visa / Master / JCB)</div>
+                            <div class="muted">Thanh toán an toàn qua cổng</div>
+                        </div>
+                    </div>
+
+                    <div class="payment-option" data-method="momo">
+                        <input type="radio" name="payment">
+                        <div style="flex:1;">
+                            <div class="payment-name">Ví điện tử (Momo / ZaloPay / ShopeePay)</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right sidebar (summary) -->
+            <aside class="card">
+                <h3 class="section-title">Tóm tắt đơn hàng</h3>
+                <div class="summary-row">
+                    <span>Thành tiền</span>
+                    <span id="subtotal">430.000 ₫</span>
+                </div>
+                <div class="summary-row">
+                    <span>Phí vận chuyển</span>
+                    <span id="shipfee">20.000 ₫</span>
+                </div>
+                <div class="summary-row summary-total">
+                    <span>Tổng (gồm VAT)</span>
+                    <span id="total">450.000 ₫</span>
+                </div>
+
+                <div style="margin-top:14px;">
+                    <div class="promo-input-group" style="display:flex; gap:8px;">
+                        <input id="promoInput" class="input" placeholder="Nhập mã khuyến mãi / quà tặng">
+                        <button id="applyPromo" class="btn btn-ghost">Áp dụng</button>
+                    </div>
+                    <div class="muted" style="margin-top:8px;">ℹ️ Có thể áp dụng đồng thời nhiều mã</div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <div class="footer-actions">
+        <div class="terms">
+            <input type="checkbox" id="agree">
+            <label for="agree">Bằng việc tiến hành mua hàng, tôi đồng ý với <a href="#" style="color:var(--color-primary); text-decoration:none;">Điều khoản & Điều kiện</a></label>
+        </div>
+        <div style="flex:1;text-align:center; color:#6f6260;">🎁 Bạn chưa chọn quà kèm theo đơn hàng</div>
+        <div>
+            <button id="confirm" class="btn btn-primary">XÁC NHẬN THANH TOÁN</button>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div>
+                <h4 style="color:var(--color-bg);">Thông tin liên hệ</h4>
+                <p>BookStore.com</p>
+            </div>
+            <div>
+                <h4 style="color:var(--color-bg);">Theo dõi</h4>
+                <p>Facebook • Instagram</p>
+            </div>
+            <div>
+                <h4 style="color:var(--color-bg);">Hỗ trợ</h4>
+                <p>Email: support@bookstore.com</p>
+            </div>
+        </div>
+    </footer>
+
+<script>
+document.getElementById('confirm').addEventListener('click', function(){
+    const agree = document.getElementById('agree').checked;
+    if(!agree){
+        alert('Vui lòng đồng ý Điều khoản & Điều kiện trước khi thanh toán.');
+        return;
+    }
+    alert('Thanh toán thành công (giả lập). Cảm ơn bạn đã mua hàng!');
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookStore - Sách Tiếng Việt</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+        <div class="header-top">
+            <div class="header-inner">
+                <div class="brand">📚 BookStore</div>
+                <div class="promo-text">Miễn phí vận chuyển cho đơn hàng từ 300.000đ</div>
+                <div class="promo-offer">Giảm 15%</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="nav-inner">
+            <div class="icon-btn">☰</div>
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Tìm kiếm sách, tác giả...">
+                <button class="search-btn">🔍</button>
+            </div>
+            <div class="row">
+                <a href="login.html" class="icon-btn">🔑</a>
+                <a href="register.html" class="icon-btn">👤</a>
+                <a href="cart.html" class="icon-btn">🛒</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb-nav">
+        <div class="container">
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+                <a href="home.html">Trang chủ</a>
+                <a href="list.html">Catalog</a>
+                <span class="current">Sách Tiếng Việt</span>
+                <div class="breadcrumb-links">
+                    <a href="cart.html">🛒 Giỏ hàng</a>
+                    <a href="introduce.html">ℹ️ Giới thiệu</a>
+                    <a href="feedback.html">💬 Liên hệ</a>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <main class="container">
+      <h1 class="page-title">Sách Tiếng Việt</h1>
+
+      <div class="toolbar">
+        <div class="controls">
+          <label>
+            Sắp xếp:
+            <select>
+              <option>Phổ biến</option>
+              <option>Giá tăng dần</option>
+              <option>Giá giảm dần</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div class="layout">
+        <aside class="sidebar" aria-label="Bộ lọc và danh mục">
+          <section>
+            <h3>Danh mục</h3>
+            <ul class="list">
+              <li><a href="#">Văn Học</a></li>
+              <li><a href="#">Kinh Tế/Kinh Doanh</a></li>
+              <li><a href="#">Kỹ Năng/Sống Đẹp</a></li>
+              <li><a href="#">Thiếu Nhi</a></li>
+              <li><a href="#">Tuổi Mới Lớn</a></li>
+              <li><a href="#">Truyện Tranh/Manga</a></li>
+              <li><a href="#">Kiến Trúc/Hội Họa/Điện Ảnh</a></li>
+              <li><a href="#">Thể Loại Khác</a></li>
+              <li><a href="#">Nhà Phát Hành</a></li>
+              <li><a href="#">Tác Giả</a></li>
+              <li><a href="#">Giải Thưởng</a></li>
+              <li><a href="#">Tủ Sách</a></li>
+            </ul>
+          </section>
+
+          <section class="filter">
+            <h3>Lọc Sản Phẩm</h3>
+            <label class="label">Giá</label>
+            <div class="price-filter">
+              <input type="range" min="0" max="1000000" value="200000" />
+              <div class="price-row">
+                <input type="number" value="0" />
+                <input type="number" value="1000000" />
+              </div>
+            </div>
+          </section>
+
+          <section class="filter">
+            <h3>Nhà Xuất Bản</h3>
+            <div class="search-mini">
+              <input type="text" placeholder="Tìm NXB" />
+            </div>
+            <ul class="checklist">
+              <li>
+                <label><input type="checkbox" /> Alphabooks</label>
+              </li>
+              <li>
+                <label><input type="checkbox" /> Bão Học Trò</label>
+              </li>
+              <li>
+                <label><input type="checkbox" /> Bloom Books</label>
+              </li>
+              <li>
+                <label><input type="checkbox" /> Nhã Nam</label>
+              </li>
+              <li>
+                <label><input type="checkbox" /> Kim Đồng</label>
+              </li>
+            </ul>
+            <a class="more" href="#">Hiển thị tất cả</a>
+          </section>
+
+          <section class="filter">
+            <h3>Tác Giả</h3>
+            <div class="search-mini">
+              <input type="text" placeholder="Tìm tác giả" />
+            </div>
+            <ul class="checklist">
+              <li>
+                <label><input type="checkbox" /> Nhat Hanh</label>
+              </li>
+              <li>
+                <label><input type="checkbox" /> Osamu Dazai</label>
+              </li>
+              <li>
+                <label><input type="checkbox" /> Dale Carnegie</label>
+              </li>
+              <li>
+                <label><input type="checkbox" /> Lisa Cron</label>
+              </li>
+              <li>
+                <label><input type="checkbox" /> Hoàng Ngọc</label>
+              </li>
+            </ul>
+            <a class="more" href="#">Hiển thị tất cả</a>
+          </section>
+        </aside>
+
+        <section class="content">
+          <div class="grid">
+            <!-- Card 1 -->
+            <article class="card">
+              <div class="thumb">
+                <span class="badge ribbon">Giảm 10%</span>
+                <img
+                  src="../img/yeunhungdieukhonghoanhao.jpg"
+                  alt="Yêu những điều không hoàn hảo"
+                />
+              </div>
+              <h4 class="title">Yêu Những Điều Không Hoàn Hảo</h4>
+              <div class="rating">★★★★★ <span class="count">(3)</span></div>
+              <div class="stock ok">Còn hàng</div>
+              <div class="price-row-inline">
+                <span class="old">79,000 đ</span
+                ><span class="price">71,100 đ</span>
+              </div>
+              <button class="btn-add" type="button">Thêm vào giỏ</button>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="card">
+              <div class="thumb">
+                <span class="badge ribbon">Giảm 10%</span>
+                <img
+                  src="../img/khoeannoisecosduocthienha.jpg"
+                  alt="Khéo Ăn nói sẽ có được thiên hạ"
+                />
+              </div>
+              <h4 class="title">Khéo Ăn Nói Sẽ Có Được Thiên Hạ</h4>
+              <div class="rating">★★★★☆ <span class="count">(5)</span></div>
+              <div class="stock ok">Còn hàng</div>
+              <div class="price-row-inline">
+                <span class="old">119,000 đ</span
+                ><span class="price">107,100 đ</span>
+              </div>
+              <button class="btn-add" type="button">Thêm vào giỏ</button>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="card">
+              <div class="thumb">
+                <span class="badge ribbon">Giảm 10%</span>
+                <img src="../img/dacnhantam.jpg" alt="Đắc Nhân Tâm" />
+              </div>
+              <h4 class="title">Đắc Nhân Tâm (Tái bản 2021)</h4>
+              <div class="rating">★★★☆☆ <span class="count">(2)</span></div>
+              <div class="stock ok">Còn hàng</div>
+              <div class="price-row-inline">
+                <span class="old">110,000 đ</span
+                ><span class="price">99,000 đ</span>
+              </div>
+              <button class="btn-add" type="button">Thêm vào giỏ</button>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="card">
+              <div class="thumb">
+                <span class="badge ribbon">Giảm 10%</span>
+                <img
+                  src="../img/ditimlesong.jpg"
+                  alt="Đi Tìm Lẽ Sống (Tái Bản 2022)"
+                />
+              </div>
+              <h4 class="title">Đi Tìm Lẽ Sống (Tái Bản 2022)</h4>
+              <div class="rating">★★★★★ <span class="count">(3)</span></div>
+              <div class="stock ok">Còn hàng</div>
+              <div class="price-row-inline">
+                <span class="old">104,000 đ</span
+                ><span class="price">93,600 đ</span>
+              </div>
+              <button class="btn-add" type="button">Thêm vào giỏ</button>
+            </article>
+
+            <!-- Card 5 -->
+            <article class="card">
+              <div class="thumb">
+                <span class="badge ribbon">Giảm 10%</span>
+                <img
+                  src="../img/hieuvetraitim.jpg"
+                  alt="Hiểu Về Trái Tim (Tái Bản 2023)"
+                />
+              </div>
+              <h4 class="title">Hiểu Về Trái Tim (Tái Bản 2023)</h4>
+              <div class="rating">★★★★★ <span class="count">(1)</span></div>
+              <div class="stock ok">Còn hàng</div>
+              <div class="price-row-inline">
+                <span class="old">89,000 đ</span
+                ><span class="price">80,100 đ</span>
+              </div>
+              <button class="btn-add" type="button">Thêm vào giỏ</button>
+            </article>
+
+            <!-- Card 6 -->
+            <article class="card">
+              <div class="thumb">
+                <span class="badge ribbon">Giảm 10%</span>
+                <img
+                  src="../img/tinhcachconnguoi.jpg"
+                  alt="Tính Cách Con Người"
+                />
+              </div>
+              <h4 class="title">Tính Cách Con Người (Tái bản 2022)</h4>
+              <div class="rating">★★★★☆ <span class="count">(7)</span></div>
+              <div class="stock ok">Còn hàng</div>
+              <div class="price-row-inline">
+                <span class="old">120,000 đ</span
+                ><span class="price">108,000 đ</span>
+              </div>
+              <button class="btn-add" type="button">Thêm vào giỏ</button>
+            </article>
+
+            <!-- Card 7 -->
+            <article class="card">
+              <div class="thumb">
+                <span class="badge ribbon">Giảm 10%</span>
+                <img
+                  src="../img/banducacuoicung.jpg"
+                  alt="Bản Du Ca Cuối Cùng (Tái Bản)"
+                />
+              </div>
+              <h4 class="title">Bản Du Ca Cuối Cùng (Tái Bản)</h4>
+              <div class="rating">★★★☆☆ <span class="count">(4)</span></div>
+              <div class="stock ok">Còn hàng</div>
+              <div class="price-row-inline">
+                <span class="old">115,000 đ</span
+                ><span class="price">103,500 đ</span>
+              </div>
+              <button class="btn-add" type="button">Thêm vào giỏ</button>
+            </article>
+
+            <!-- Card 8 -->
+            <article class="card">
+              <div class="thumb">
+                <span class="badge ribbon">Giảm 10%</span>
+                <img src="../img/muji.jpg" alt="Muji - Đơn Giản Là Hoàn Mỹ" />
+              </div>
+              <h4 class="title">Muji - Đơn Giản Là Hoàn Mỹ</h4>
+              <div class="rating">★★★★★ <span class="count">(8)</span></div>
+              <div class="stock ok">Còn hàng</div>
+              <div class="price-row-inline">
+                <span class="old">140,000 đ</span
+                ><span class="price">126,000 đ</span>
+              </div>
+              <button class="btn-add" type="button">Thêm vào giỏ</button>
+            </article>
+          </div>
+
+          <nav class="pagination" aria-label="Phân trang">
+            <a class="prev" href="#">« Trước</a>
+            <a class="active" href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a class="next" href="#">Tiếp theo »</a>
+          </nav>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap foot-grid">
+        <section>
+          <h4>Về Chúng Tôi</h4>
+          <ul>
+            <li><a href="#">Giới thiệu Nhà Sách</a></li>
+            <li><a href="#">Điều Khoản Sử Dụng</a></li>
+            <li><a href="#">Chính Sách Bảo Mật</a></li>
+          </ul>
+        </section>
+        <section>
+          <h4>Tài Khoản Của Tôi</h4>
+          <ul>
+            <li><a href="#">Đăng nhập</a></li>
+            <li><a href="#">Tạo tài khoản</a></li>
+          </ul>
+        </section>
+        <section>
+          <h4>Hỗ Trợ Khách Hàng</h4>
+          <ul>
+            <li><a href="#">Câu hỏi thường gặp</a></li>
+            <li><a href="#">Chính sách đổi trả</a></li>
+          </ul>
+        </section>
+        <section>
+          <h4>Liên Hệ</h4>
+          <p>Hotline: 1900 6868</p>
+          <p>Email: hotro@bookish.vn</p>
+          <div class="socials">
+            <a href="#" title="Facebook">
+              <img src="../img/facebook.png" alt="Facebook" />
+            </a>
+            <a href="#" title="Instagram">
+              <img src="../img/instagram.png" alt="Instagram" />
+            </a>
+            <a href="#" title="Twitter">
+              <img src="../img/twitter.png" alt="Twitter" />
+            </a>
+          </div>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>

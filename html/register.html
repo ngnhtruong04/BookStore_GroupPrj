@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Đăng ký - BookStore</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-top">
+            <div class="header-inner">
+                <div class="brand">BookStore.com</div>
+                <div class="row">
+                    <div class="promo-text">HỌC XỊN GIÁ MỊN CÙNG BOOKSTORE</div>
+                    <div class="promo-offer">GIẢM ĐẾN 35%</div>
+                </div>
+            </div>
+        </div>
+        <nav class="nav-bar">
+            <div class="nav-inner">
+                <div class="icon-btn" aria-hidden="true">☰</div>
+                <div class="search-bar">
+                    <input class="search-input" placeholder="Tìm kiếm sách..." />
+                    <button class="search-btn">🔍</button>
+                </div>
+                <div class="row">
+                    <a href="login.html" class="icon-btn">🔑</a>
+                    <a href="register.html" class="icon-btn">👤</a>
+                    <a href="cart.html" class="icon-btn">🛒</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb-nav">
+        <div class="container">
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+                <a href="home.html">Trang chủ</a>
+                <span class="current">Đăng ký</span>
+                <div class="breadcrumb-links">
+                    <a href="list.html">📚 Sách</a>
+                    <a href="cart.html">🛒 Giỏ hàng</a>
+                    <a href="introduce.html">ℹ️ Giới thiệu</a>
+                    <a href="feedback.html">💬 Liên hệ</a>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Register content -->
+    <main class="register-page container">
+        <section class="register-card">
+            <h1 class="h1">Đăng ký tài khoản</h1>
+
+            <form id="registerForm" novalidate>
+                <div class="form-group">
+                    <label class="label" for="fullName">Họ và tên *</label>
+                    <input id="fullName" class="input" type="text" placeholder="Nhập họ và tên của bạn" required>
+                    <div class="error" id="fullNameError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label class="label" for="email">Email *</label>
+                    <input id="email" class="input" type="email" placeholder="example@email.com" required>
+                    <div class="error" id="emailError"></div>
+                </div>
+
+                <div class="row two-cols">
+                    <div class="form-group half">
+                        <label class="label" for="birthDate">Ngày sinh *</label>
+                        <input id="birthDate" class="input" type="date" required>
+                        <div class="error" id="birthDateError"></div>
+                    </div>
+
+                    <div class="form-group half">
+                        <label class="label" for="gender">Giới tính *</label>
+                        <select id="gender" class="select" required>
+                            <option value="">Chọn</option>
+                            <option value="male">Nam</option>
+                            <option value="female">Nữ</option>
+                            <option value="other">Khác</option>
+                        </select>
+                        <div class="error" id="genderError"></div>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="label" for="phone">Số điện thoại *</label>
+                    <input id="phone" class="input" type="tel" placeholder="0123456789" required>
+                    <div class="error" id="phoneError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label class="label" for="address">Địa chỉ *</label>
+                    <input id="address" class="input" type="text" placeholder="Địa chỉ giao hàng" required>
+                    <div class="error" id="addressError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label class="label" for="username">Tên tài khoản *</label>
+                    <input id="username" class="input" type="text" placeholder="Tên đăng nhập" required>
+                    <div class="error" id="usernameError"></div>
+                </div>
+
+                <div class="row two-cols">
+                    <div class="form-group half">
+                        <label class="label" for="password">Mật khẩu *</label>
+                        <input id="password" class="input" type="password" placeholder="Mật khẩu" required>
+                        <div class="error" id="passwordError"></div>
+                    </div>
+                    <div class="form-group half">
+                        <label class="label" for="confirmPassword">Nhập lại mật khẩu *</label>
+                        <input id="confirmPassword" class="input" type="password" placeholder="Nhập lại mật khẩu"
+                            required>
+                        <div class="error" id="confirmPasswordError"></div>
+                    </div>
+                </div>
+
+
+                <div class="register-actions">
+                    <button type="submit" class="btn btn-primary">Đăng ký</button>
+                    <div class="form-foot">Đã có tài khoản? <a href="login.html"
+                            style="color:var(--color-primary);text-decoration:none;">Đăng nhập ngay</a></div>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div>
+                <h4 style="color:var(--color-bg); margin-bottom:8px;">Thông tin liên hệ</h4>
+                <p>BookStore.com</p>
+                <p>123 Đường Chính, Quận 1, TP.HCM</p>
+            </div>
+            <div>
+                <h4 style="color:var(--color-bg); margin-bottom:8px;">Theo dõi</h4>
+                <p>Facebook | Instagram | YouTube</p>
+            </div>
+            <div>
+                <h4 style="color:var(--color-bg); margin-bottom:8px;">Hỗ trợ</h4>
+                <p>Email: support@bookstore.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        /* Client-side validation (simple) */
+        document.getElementById('registerForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            // clear errors
+            document.querySelectorAll('.error').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('.input, .select').forEach(i => i.classList.remove('invalid'));
+
+            let valid = true;
+            const fullName = document.getElementById('fullName').value.trim();
+            if (fullName.length < 2) { showError('fullNameError', 'Họ tên phải có ít nhất 2 ký tự'); valid = false; }
+
+            const email = document.getElementById('email').value.trim();
+            const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRe.test(email)) { showError('emailError', 'Email không hợp lệ'); valid = false; }
+
+            const birthDate = document.getElementById('birthDate').value;
+            if (!birthDate) { showError('birthDateError', 'Vui lòng chọn ngày sinh'); valid = false; }
+            else {
+                const today = new Date();
+                const b = new Date(birthDate);
+                const age = today.getFullYear() - b.getFullYear();
+                if (age < 13) { showError('birthDateError', 'Bạn phải ít nhất 13 tuổi để đăng ký'); valid = false; }
+            }
+
+            const gender = document.getElementById('gender').value;
+            if (!gender) { showError('genderError', 'Vui lòng chọn giới tính'); valid = false; }
+
+            const phone = document.getElementById('phone').value.trim();
+            if (!/^[0-9]{10,11}$/.test(phone)) { showError('phoneError', 'Số điện thoại phải có 10-11 chữ số'); valid = false; }
+
+            const address = document.getElementById('address').value.trim();
+            if (address.length < 5) { showError('addressError', 'Địa chỉ phải có ít nhất 5 ký tự'); valid = false; }
+
+            const username = document.getElementById('username').value.trim();
+            if (username.length < 3) { showError('usernameError', 'Tên tài khoản phải có ít nhất 3 ký tự'); valid = false; }
+
+            const password = document.getElementById('password').value;
+            if (password.length < 6) { showError('passwordError', 'Mật khẩu phải có ít nhất 6 ký tự'); valid = false; }
+
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            if (password !== confirmPassword) { showError('confirmPasswordError', 'Mật khẩu xác nhận không khớp'); valid = false; }
+
+            if (valid) {
+                alert('Đăng ký thành công!');
+                // TODO: send to server
+                // location.href = 'login.html';
+            }
+        });
+
+        function showError(id, msg) {
+            const el = document.getElementById(id);
+            if (!el) return;
+            el.textContent = msg;
+            el.style.display = 'block';
+            const input = document.getElementById(id.replace('Error', ''));
+            if (input) input.classList.add('invalid');
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <section>
+                <h4>Về Chúng Tôi</h4>
+                <ul>
+                    <li><a href="introduce.html">Giới thiệu Nhà Sách</a></li>
+                    <li><a href="#">Điều Khoản Sử Dụng</a></li>
+                    <li><a href="#">Chính Sách Bảo Mật</a></li>
+                </ul>
+            </section>
+            <section>
+                <h4>Tài Khoản Của Tôi</h4>
+                <ul>
+                    <li><a href="login.html">Đăng nhập</a></li>
+                    <li><a href="register.html">Tạo tài khoản</a></li>
+                </ul>
+            </section>
+            <section>
+                <h4>Hỗ Trợ Khách Hàng</h4>
+                <ul>
+                    <li><a href="feedback.html">Câu hỏi thường gặp</a></li>
+                    <li><a href="#">Chính sách đổi trả</a></li>
+                </ul>
+            </section>
+            <section>
+                <h4>Liên Hệ</h4>
+                <p>Hotline: 1900 6868</p>
+                <p>Email: hotro@bookstore.vn</p>
+                <div class="socials">
+                    <a href="#" title="Facebook">
+                        <img src="../img/facebook.png" alt="Facebook">
+                    </a>
+                    <a href="#" title="Instagram">
+                        <img src="../img/instagram.png" alt="Instagram">
+                    </a>
+                    <a href="#" title="Twitter">
+                        <img src="../img/twitter.png" alt="Twitter">
+                    </a>
+                </div>
+            </section>
+        </div>
+    </footer>
+</body>
+
+</html>

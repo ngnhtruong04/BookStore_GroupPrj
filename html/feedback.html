@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ - BookStore</title>
+
+    <link rel="stylesheet" href="../css/style.css"> <!-- main style css -->
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-top">
+            <div class="header-inner">
+                <div class="brand">📚 BookStore</div>
+                <div class="promo-text">Miễn phí vận chuyển cho đơn hàng từ 300.000đ</div>
+                <div class="promo-offer">Giảm 15%</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="nav-inner">
+            <div class="icon-btn">☰</div>
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Tìm kiếm sách, tác giả...">
+                <button class="search-btn">🔍</button>
+            </div>
+            <div class="row">
+                <a href="login.html" class="icon-btn">🔑</a>
+                <a href="register.html" class="icon-btn">👤</a>
+                <a href="cart.html" class="icon-btn">🛒</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb-nav">
+        <div class="container">
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+                <a href="home.html">Trang chủ</a>
+                <span class="current">Liên hệ</span>
+                <div class="breadcrumb-links">
+                    <a href="list.html">📚 Sách</a>
+                    <a href="cart.html">🛒 Giỏ hàng</a>
+                    <a href="introduce.html">ℹ️ Giới thiệu</a>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="contact-card">
+            <h3 class="text-center mb-4">Liên hệ với chúng tôi</h3>
+            <form id="contactForm" action="https://formsubmit.co/esonipp@gmail.com" method="POST">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Họ và tên</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Nhập họ tên của bạn">
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Nhập email">
+                </div>
+
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Số điện thoại</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Nhập số điện thoại">
+                </div>
+
+                <div class="mb-3">
+                    <label for="message" class="form-label">Nội dung</label>
+                    <textarea class="form-control" id="message" name="message" rows="5"
+                        placeholder="Nhập nội dung cần gửi"></textarea>
+                </div>
+
+                <div id="alertBox" class="alert alert-danger d-none"></div>
+
+                <button type="submit" class="btn btn-send w-100">Gửi liên hệ</button>
+
+                <!-- FormSubmit hidden settings -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
+            </form>
+
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <section>
+                <h4>Về Chúng Tôi</h4>
+                <ul>
+                    <li><a href="introduce.html">Giới thiệu Nhà Sách</a></li>
+                    <li><a href="#">Điều Khoản Sử Dụng</a></li>
+                    <li><a href="#">Chính Sách Bảo Mật</a></li>
+                </ul>
+            </section>
+            <section>
+                <h4>Tài Khoản Của Tôi</h4>
+                <ul>
+                    <li><a href="register.html">Đăng nhập</a></li>
+                    <li><a href="register.html">Tạo tài khoản</a></li>
+                </ul>
+            </section>
+            <section>
+                <h4>Hỗ Trợ Khách Hàng</h4>
+                <ul>
+                    <li><a href="feedback.html">Câu hỏi thường gặp</a></li>
+                    <li><a href="#">Chính sách đổi trả</a></li>
+                </ul>
+            </section>
+            <section>
+                <h4>Liên Hệ</h4>
+                <p>Hotline: 1900 6868</p>
+                <p>Email: hotro@bookstore.vn</p>
+                <div class="socials">
+                    <a href="#" title="Facebook">
+                        <img src="../img/facebook.png" alt="Facebook">
+                    </a>
+                    <a href="#" title="Instagram">
+                        <img src="../img/instagram.png" alt="Instagram">
+                    </a>
+                    <a href="#" title="Twitter">
+                        <img src="../img/twitter.png" alt="Twitter">
+                    </a>
+                </div>
+            </section>
+        </div>
+    </footer>
+
+    <script src="../JS/feedback.js"></script> <!-- feedback JS -->
+</body>
+
+</html>
