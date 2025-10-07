@@ -1,9 +1,62 @@
-h4 {
-    color: rgb(227, 200, 202);
+:root {
+    --primary: #8B7D6B;
+    --secondary: #D4A5A5;
+    --background: #FEFCF7;
+    --highlight: #F5E6D3;
+    --text-main: #333333;
+    --error: #D2691E;
 }
-img {
-    width: 90px;
-    height: 90px;
+body {
+    background-color: var(--background);
+    color: var(--text-main);
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    line-height: 1.5em;
+}
+h1, h2, h3, h4 {
+    color: var(--primary);
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 22px;
+    color: var(--primary);
+    margin-top: 30px;
+}
+
+p, li {
+    font-size: 16px;
+}
+.container-fluild {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 24px;
+    background-color: var(--background);
+}
+
+.middle_col {
+    background-color: var(--secondary);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(139, 125, 107, 0.3);
+}
+
+.middle_col .col {
+    color: var(--text-main);
+    color: black;
+}
+
+.middle_col hr {
+    border: 1px solid var(--highlight);
+    margin: 16px 0;
+}
+
+.middle_col img {
+    width: 80px;
+    height: 80px;
 }
 .middle_col  {
     position: fixed;
