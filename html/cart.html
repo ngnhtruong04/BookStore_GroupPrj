@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Giỏ hàng - BookStore</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-top">
+            <div class="header-inner">
+                <div class="brand">BookStore.com</div>
+                <div class="row">
+                    <div class="promo-text">HỌC XỊN GIÁ MỊN CÙNG BOOKSTORE</div>
+                    <div class="promo-offer">GIẢM ĐẾN 35%</div>
+                </div>
+            </div>
+        </div>
+        <nav class="nav-bar">
+            <div class="nav-inner">
+                <div class="icon-btn" aria-hidden="true">☰</div>
+                <div class="search-bar">
+                    <input class="search-input" placeholder="Tìm kiếm sách..." />
+                    <button class="search-btn">🔍</button>
+                </div>
+                <div class="row">
+                    <a href="login.html" class="icon-btn">🔑</a>
+                    <a href="register.html" class="icon-btn">👤</a>
+                    <a href="cart.html" class="icon-btn">🛒</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb-nav">
+        <div class="container">
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+                <a href="home.html">Trang chủ</a>
+                <span class="current">Giỏ hàng</span>
+                <div class="breadcrumb-links">
+                    <a href="list.html">📚 Sách</a>
+                    <a href="checkout.html">💳 Thanh toán</a>
+                    <a href="introduce.html">ℹ️ Giới thiệu</a>
+                    <a href="feedback.html">💬 Liên hệ</a>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="main-grid">
+            <!-- Cart list -->
+            <section class="card">
+                <div class="row" style="justify-content:space-between; align-items:center;">
+                    <h2 class="section-title">Giỏ hàng (2 sản phẩm)</h2>
+                    <div class="select-all row">
+                        <input type="checkbox" id="selectAll" class="item-checkbox">
+                        <label for="selectAll" class="muted">Chọn tất cả</label>
+                    </div>
+                </div>
+
+                <div class="cart-list" id="cartList">
+                    <!-- Item 1 -->
+                    <div class="cart-item" data-price="97000">
+                        <input type="checkbox" class="item-checkbox">
+                        <img class="item-image" src="../img/vuon-hoa.jpg" alt="Bìa sách">
+                        <div class="col">
+                            <div class="item-title">Vườn Hoa Mạt Dược Ký Sự - Những Kỳ Án (Tái Bản 2023)</div>
+                            <div class="muted">Tác giả: Nguyễn A • Nhà xuất bản: ABC</div>
+                            <div class="item-price row">
+                                <div class="price-current">97.000 ₫</div>
+                                <div class="price-old">139.000 ₫</div>
+                            </div>
+                        </div>
+
+                        <div class="qty-controls">
+                            <button class="qty-btn" data-action="decrease">-</button>
+                            <input class="qty-input" type="number" value="1" min="1">
+                            <button class="qty-btn" data-action="increase">+</button>
+                        </div>
+
+                        <div class="price-cell">
+                            <div class="item-total price-current">97.000 ₫</div>
+                        </div>
+
+                        <div>
+                            <button class="qty-btn remove" title="Xóa">🗑️</button>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="cart-item" data-price="132000">
+                        <input type="checkbox" class="item-checkbox">
+                        <img class="item-image" src="../img/nha-hoa-tre-con-phat-hoa.jpg" alt="Bìa sách">
+                        <div class="col">
+                            <div class="item-title">Nhà Này Không Có Trẻ Con Phát Hỏa!</div>
+                            <div class="muted">Tác giả: B. • NXB: XYZ</div>
+                            <div class="item-price row">
+                                <div class="price-current">132.000 ₫</div>
+                                <div class="price-old">189.000 ₫</div>
+                            </div>
+                        </div>
+
+                        <div class="qty-controls">
+                            <button class="qty-btn" data-action="decrease">-</button>
+                            <input class="qty-input" type="number" value="1" min="1">
+                            <button class="qty-btn" data-action="increase">+</button>
+                        </div>
+
+                        <div class="price-cell">
+                            <div class="item-total price-current">132.000 ₫</div>
+                        </div>
+
+                        <div>
+                            <button class="qty-btn remove" title="Xóa">🗑️</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sidebar -->
+            <aside class="card">
+                <h3 class="section-title">Tóm tắt đơn hàng</h3>
+                <div class="summary-row">
+                    <span>Thành tiền</span>
+                    <span id="subTotal">229.000 ₫</span>
+                </div>
+                <div class="summary-row">
+                    <span>Phí vận chuyển</span>
+                    <span id="shippingFee">20.000 ₫</span>
+                </div>
+                <div class="summary-row summary-total">
+                    <span>Tổng (gồm VAT)</span>
+                    <span id="grandTotal">249.000 ₫</span>
+                </div>
+
+                <a class="checkout-link" href="checkout.html">
+                    <button class="btn btn-primary" style="margin-top:14px; width:100%;">TIẾN TỚI THANH TOÁN</button>
+                </a>
+
+                <div style="margin-top:12px; font-size:13px; color:#6f6260;">
+                    <div>Khuyến mãi áp dụng tự động nếu đủ điều kiện.</div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div>
+                <h4 style="color:var(--color-bg);">Thông tin liên hệ</h4>
+                <p>BookStore.com</p>
+            </div>
+            <div>
+                <h4 style="color:var(--color-bg);">Theo dõi</h4>
+                <p>Facebook • Instagram</p>
+            </div>
+            <div>
+                <h4 style="color:var(--color-bg);">Hỗ trợ</h4>
+                <p>Email: support@bookstore.com</p>
+            </div>
+        </div>
+    </footer>
+
+<script>
+/* Cart interactions: quantity change, recalc totals */
+function formatVnd(n){
+    return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + ' ₫';
+}
+function parsePriceAttr(el){
+    return parseInt(el.getAttribute('data-price') || '0', 10);
+}
+
+function recalc(){
+    const items = document.querySelectorAll('.cart-item');
+    let subtotal = 0;
+    items.forEach(it=>{
+        const price = parsePriceAttr(it);
+        const qty = Number(it.querySelector('.qty-input').value || 1);
+        const total = price * qty;
+        it.querySelector('.item-total').textContent = formatVnd(total);
+        subtotal += total;
+    });
+    document.getElementById('subTotal').textContent = formatVnd(subtotal);
+    const shipping = 20000;
+    document.getElementById('shippingFee').textContent = formatVnd(shipping);
+    document.getElementById('grandTotal').textContent = formatVnd(subtotal + shipping);
+}
+
+document.querySelectorAll('.qty-btn[data-action]').forEach(btn => {
+    btn.addEventListener('click', function(){
+        const action = this.getAttribute('data-action');
+        const wrapper = this.closest('.cart-item');
+        const input = wrapper.querySelector('.qty-input');
+        let v = Number(input.value || 1);
+        if(action === 'increase') v++;
+        if(action === 'decrease' && v>1) v--;
+        input.value = v;
+        recalc();
+    });
+});
+
+document.querySelectorAll('.qty-input').forEach(inp => {
+    inp.addEventListener('change', function(){
+        if(Number(this.value) < 1) this.value = 1;
+        recalc();
+    });
+});
+
+document.querySelectorAll('.remove').forEach(btn=>{
+    btn.addEventListener('click', function(){
+        const card = this.closest('.cart-item');
+        card.remove();
+        recalc();
+    });
+});
+
+document.getElementById('selectAll').addEventListener('change', function(){
+    document.querySelectorAll('.cart-item .item-checkbox').forEach(cb => cb.checked = this.checked);
+});
+
+recalc();
+</script>
+</body>
+</html>
