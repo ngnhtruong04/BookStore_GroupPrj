@@ -11,13 +11,18 @@
     <script src="../JS/bootstrap.js"></script> <!-- bootstrap JS -->
 
     <link rel="stylesheet" href="../CSS/feedback.css"> <!-- feedback CSS -->
+
+    <!-- EmailJS -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <!-- Google reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
     <div class="container">
         <div class="contact-card">
             <h3 class="text-center mb-4">Liên hệ với chúng tôi</h3>
-            <form id="contactForm" action="https://formsubmit.co/esonipp@gmail.com" method="POST">
+            <form id="contactForm" method="POST">
                 <div class="mb-3">
                     <label for="name" class="form-label">Họ và tên</label>
                     <input type="text" class="form-control" id="name" name="name" placeholder="Nhập họ tên của bạn">
@@ -41,12 +46,11 @@
 
                 <div id="alertBox" class="alert alert-danger d-none"></div>
 
+                <!-- reCAPTCHA -->
+                <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+
                 <button type="submit" class="btn btn-send w-100">Gửi liên hệ</button>
 
-                <!-- FormSubmit hidden settings -->
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_template" value="table">
-                <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
             </form>
 
 
