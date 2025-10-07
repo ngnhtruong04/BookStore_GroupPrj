@@ -4,54 +4,78 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bookish - Sách Tiếng Việt</title>
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/list.css" />
   </head>
   <body>
-    <header class="topbar">
-      <div class="wrap topbar-inner">
-        <div class="logo">
-          <span class="logo-mark">📚</span>
-          <span class="logo-text">Bookish</span>
-        </div>
-        <form class="search">
-          <input type="text" placeholder="Tìm sách, tác giả, NXB..." />
+    <header class="topbar topbar--store">
+      <div class="wrap topbar-store-inner">
+        <a class="brand" href="#" aria-label="Bookstore">
+          <span class="brand-logo">📚</span>
+          <span class="brand-text">Bookstore</span>
+        </a>
+
+        <form class="searchbar" role="search" aria-label="Tìm kiếm sản phẩm">
+          <button class="cat-btn" type="button" title="Danh mục">
+            <span class="chev"></span>
+          </button>
+          <input
+            class="search-input"
+            type="text"
+            placeholder="Tìm sách, tác giả, NXB..."
+          />
+          <button class="search-btn" type="submit" title="Tìm kiếm">🔍</button>
         </form>
-        <nav class="nav">
-          <a href="#">Trang chủ</a> <a href="#">Giỏ hàng</a>
-          <a href="#">Tài khoản</a>
-          <div class="avatar">👤</div>
-        </nav>
+
+        <ul class="quick-actions" aria-label="Lối tắt">
+          <li>
+            <a href="#" title="Thông báo">
+              <img
+                class="qa-icon"
+                src="../img/notification.png"
+                alt="Thông Báo"
+              />
+              <span>Thông Báo</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" title="Giỏ hàng">
+              <img
+                class="qa-icon"
+                src="../img/shopping-cart.png"
+                alt="Giỏ Hàng"
+              />
+              <span>Giỏ Hàng</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" title="Tài khoản">
+              <img class="qa-icon" src="../img/user.png" alt="Tài khoản" />
+              <span>Tài khoản</span>
+            </a>
+          </li>
+        </ul>
       </div>
     </header>
+
     <main class="wrap">
       <h1 class="page-title">Sách Tiếng Việt</h1>
+
       <div class="toolbar">
         <div class="breadcrumbs">Trang chủ / Catalog / Sách Tiếng Việt</div>
         <div class="controls">
           <label>
             Sắp xếp:
             <select>
-              <option>Popular First</option>
+              <option>Phổ biến</option>
               <option>Giá tăng dần</option>
               <option>Giá giảm dần</option>
             </select>
           </label>
-          <label>
-            Hiển thị:
-            <select>
-              <option>20</option>
-              <option>40</option>
-              <option>60</option>
-            </select>
-          </label>
-          <div class="view">
-            <button title="Dạng lưới">▦</button>
-            <button title="Dạng danh sách">≡</button>
-          </div>
         </div>
       </div>
+
       <div class="layout">
-        <aside class="sidebar">
+        <aside class="sidebar" aria-label="Bộ lọc và danh mục">
           <section>
             <h3>Danh mục</h3>
             <ul class="list">
@@ -69,6 +93,7 @@
               <li><a href="#">Tủ Sách</a></li>
             </ul>
           </section>
+
           <section class="filter">
             <h3>Lọc Sản Phẩm</h3>
             <label class="label">Giá</label>
@@ -80,10 +105,11 @@
               </div>
             </div>
           </section>
+
           <section class="filter">
             <h3>Nhà Xuất Bản</h3>
             <div class="search-mini">
-              <input type="text" placeholder="Search" />
+              <input type="text" placeholder="Tìm NXB" />
             </div>
             <ul class="checklist">
               <li>
@@ -104,10 +130,11 @@
             </ul>
             <a class="more" href="#">Hiển thị tất cả</a>
           </section>
+
           <section class="filter">
             <h3>Tác Giả</h3>
             <div class="search-mini">
-              <input type="text" placeholder="Search" />
+              <input type="text" placeholder="Tìm tác giả" />
             </div>
             <ul class="checklist">
               <li>
@@ -129,8 +156,10 @@
             <a class="more" href="#">Hiển thị tất cả</a>
           </section>
         </aside>
+
         <section class="content">
           <div class="grid">
+            <!-- Card 1 -->
             <article class="card">
               <div class="thumb">
                 <span class="badge ribbon">Giảm 10%</span>
@@ -142,12 +171,14 @@
               <h4 class="title">Yêu Những Điều Không Hoàn Hảo</h4>
               <div class="rating">★★★★★ <span class="count">(3)</span></div>
               <div class="stock ok">Còn hàng</div>
-              <div class="price-row">
+              <div class="price-row-inline">
                 <span class="old">79,000 đ</span
                 ><span class="price">71,100 đ</span>
               </div>
               <button class="btn-add" type="button">Thêm vào giỏ</button>
             </article>
+
+            <!-- Card 2 -->
             <article class="card">
               <div class="thumb">
                 <span class="badge ribbon">Giảm 10%</span>
@@ -159,26 +190,30 @@
               <h4 class="title">Khéo Ăn Nói Sẽ Có Được Thiên Hạ</h4>
               <div class="rating">★★★★☆ <span class="count">(5)</span></div>
               <div class="stock ok">Còn hàng</div>
-              <div class="price-row">
+              <div class="price-row-inline">
                 <span class="old">119,000 đ</span
                 ><span class="price">107,100 đ</span>
               </div>
               <button class="btn-add" type="button">Thêm vào giỏ</button>
             </article>
+
+            <!-- Card 3 -->
             <article class="card">
               <div class="thumb">
                 <span class="badge ribbon">Giảm 10%</span>
-                <img src="../img/dacnhantam.jpg" alt="Đắc nhân tâm" />
+                <img src="../img/dacnhantam.jpg" alt="Đắc Nhân Tâm" />
               </div>
-              <h4 class="title">Đắc Nhân Tâm (Tải bản 2021)</h4>
+              <h4 class="title">Đắc Nhân Tâm (Tái bản 2021)</h4>
               <div class="rating">★★★☆☆ <span class="count">(2)</span></div>
               <div class="stock ok">Còn hàng</div>
-              <div class="price-row">
+              <div class="price-row-inline">
                 <span class="old">110,000 đ</span
                 ><span class="price">99,000 đ</span>
               </div>
               <button class="btn-add" type="button">Thêm vào giỏ</button>
             </article>
+
+            <!-- Card 4 -->
             <article class="card">
               <div class="thumb">
                 <span class="badge ribbon">Giảm 10%</span>
@@ -190,12 +225,14 @@
               <h4 class="title">Đi Tìm Lẽ Sống (Tái Bản 2022)</h4>
               <div class="rating">★★★★★ <span class="count">(3)</span></div>
               <div class="stock ok">Còn hàng</div>
-              <div class="price-row">
+              <div class="price-row-inline">
                 <span class="old">104,000 đ</span
                 ><span class="price">93,600 đ</span>
               </div>
               <button class="btn-add" type="button">Thêm vào giỏ</button>
             </article>
+
+            <!-- Card 5 -->
             <article class="card">
               <div class="thumb">
                 <span class="badge ribbon">Giảm 10%</span>
@@ -207,12 +244,14 @@
               <h4 class="title">Hiểu Về Trái Tim (Tái Bản 2023)</h4>
               <div class="rating">★★★★★ <span class="count">(1)</span></div>
               <div class="stock ok">Còn hàng</div>
-              <div class="price-row">
+              <div class="price-row-inline">
                 <span class="old">89,000 đ</span
                 ><span class="price">80,100 đ</span>
               </div>
               <button class="btn-add" type="button">Thêm vào giỏ</button>
             </article>
+
+            <!-- Card 6 -->
             <article class="card">
               <div class="thumb">
                 <span class="badge ribbon">Giảm 10%</span>
@@ -221,15 +260,17 @@
                   alt="Tính Cách Con Người"
                 />
               </div>
-              <h4 class="title">Tính Cách Con Người(Tái bản 2022)</h4>
+              <h4 class="title">Tính Cách Con Người (Tái bản 2022)</h4>
               <div class="rating">★★★★☆ <span class="count">(7)</span></div>
               <div class="stock ok">Còn hàng</div>
-              <div class="price-row">
+              <div class="price-row-inline">
                 <span class="old">120,000 đ</span
                 ><span class="price">108,000 đ</span>
               </div>
               <button class="btn-add" type="button">Thêm vào giỏ</button>
             </article>
+
+            <!-- Card 7 -->
             <article class="card">
               <div class="thumb">
                 <span class="badge ribbon">Giảm 10%</span>
@@ -241,12 +282,14 @@
               <h4 class="title">Bản Du Ca Cuối Cùng (Tái Bản)</h4>
               <div class="rating">★★★☆☆ <span class="count">(4)</span></div>
               <div class="stock ok">Còn hàng</div>
-              <div class="price-row">
+              <div class="price-row-inline">
                 <span class="old">115,000 đ</span
                 ><span class="price">103,500 đ</span>
               </div>
               <button class="btn-add" type="button">Thêm vào giỏ</button>
             </article>
+
+            <!-- Card 8 -->
             <article class="card">
               <div class="thumb">
                 <span class="badge ribbon">Giảm 10%</span>
@@ -255,22 +298,27 @@
               <h4 class="title">Muji - Đơn Giản Là Hoàn Mỹ</h4>
               <div class="rating">★★★★★ <span class="count">(8)</span></div>
               <div class="stock ok">Còn hàng</div>
-              <div class="price-row">
+              <div class="price-row-inline">
                 <span class="old">140,000 đ</span
                 ><span class="price">126,000 đ</span>
               </div>
               <button class="btn-add" type="button">Thêm vào giỏ</button>
             </article>
           </div>
-          <div class="pagination">
+
+          <nav class="pagination" aria-label="Phân trang">
             <a class="prev" href="#">« Trước</a>
-            <a class="active" href="#">1</a> <a href="#">2</a><a href="#">3</a
-            ><a href="#">4</a><a href="#">5</a>
+            <a class="active" href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
             <a class="next" href="#">Tiếp theo »</a>
-          </div>
+          </nav>
         </section>
       </div>
     </main>
+
     <footer class="footer">
       <div class="wrap foot-grid">
         <section>
@@ -299,6 +347,17 @@
           <h4>Liên Hệ</h4>
           <p>Hotline: 1900 6868</p>
           <p>Email: hotro@bookish.vn</p>
+          <div class="socials">
+            <a href="#" title="Facebook">
+              <img src="../img/facebook.png" alt="Facebook" />
+            </a>
+            <a href="#" title="Instagram">
+              <img src="../img/instagram.png" alt="Instagram" />
+            </a>
+            <a href="#" title="Twitter">
+              <img src="../img/twitter.png" alt="Twitter" />
+            </a>
+          </div>
         </section>
       </div>
     </footer>
