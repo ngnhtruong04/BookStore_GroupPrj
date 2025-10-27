@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thay đổi câu hỏi thay đổi cuộc đời Tbook.com</title>
+    <link rel="stylesheet" href="bootstrap-jquery/bootstrap css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/home.css">
+    <script src="bootstrap-jquery/jquery-3.7.1.min.js"></script>
+
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        .carousel-item {
+            transition: transform 0.6s ease;
+        }
+        
+        .carousel-item-next,
+        .carousel-item-prev,
+        .carousel-item.active {
+            display: block !important;
+        }
+        
+        .carousel-inner {
+            width: 100%;
+            overflow: hidden;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <main>
+        <div class="container-fluid p-0">
+            <div class="header">
+                <div>
+                    <div class="banner">
+                        <img src="images/BANNER.jpg" alt="" width="90%" height="61px">
+                    </div>
+                </div>
+
+                <div class="header-bar" style="max-width: 100%;">
+                    <a href="index.html">
+                        <div class="logo">
+                            <img src="images/tbook1.png" alt="logo" width="200px">
+                        </div>
+                    </a>
+
+                    <div class="right" style="display: flex;">
+                        <a href="yeuthich.html" class="yeuthich">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-heart-fill heart" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+                            </svg>
+                            <div class="heart-hover"><p>❤️ Xem danh sách yêu thích ❤️</p></div>
+                        </a>
+                        
+                        <div class="ml-5" style="display: flex;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-telephone-fill phone" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                            </svg>
+                            <a href="" style="font-weight: 700; margin-left: 20px;font-size: larger;">0123456789</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-menu">
+                    <div class="search">
+                        <a href="gioithieu.html">
+                            <div class="gioithieu">
+                                <h3>GIỚI THIỆU</h3>
+                            </div>
+                        </a>
+                        <a href="sitemap.html">
+                            <div class="sitemap">
+                                <h3>SITEMAP</h3>
+                            </div>
+                        </a>
+
+                        <span class="category-wrapper" style="position:relative;display:inline-block;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-card-list ml-2 category-icon" viewBox="0 0 16 16">
+                            <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z"/>
+                            <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8m0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0M4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"/>
+                            </svg>
+                            <div class="cat-dropdown" style="position:absolute; top:100%; left:0; background:#fff; border:1px solid #ddd; box-shadow:0 2px 6px rgba(0,0,0,0.15); padding:8px; display:none; z-index:1000;">
+                                <ul style="list-style:none;margin:0;padding:0;">
+                                    <li style="padding:4px 8px;"><a href="manga.html">Manga</a></li>
+                                    <li style="padding:4px 8px;"><a href="#">Manhwa</a></li>
+                                    <li style="padding:4px 8px;"><a href="#">Light Novel</a></li>
+                                    <li style="padding:4px 8px;"><a href="#">Comics</a></li>
+                                    <li style="padding:4px 8px;"><a href="#">Novel</a></li>
+                                </ul>
+                            </div>
+                        </span>
+
+                        <div class="searchbox">
+                            <input type="text" placeholder="Solo Leveling" style="height: 40px;width: 580px;border-radius: 10px;background-color: #dfe9eb;padding: 10px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16" style="color: black;">
+                              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                            </svg>
+                        </div>
+
+                        <div class="icon" style="margin-left: 30px;">
+                            <div class="dangnhap">
+                                <a href="dangnhap.html">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="39" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                                  </svg>
+                                    <p style="color: #aeadef;font-size: 10px;font-weight: 700;margin: 0px;">Tài khoản</p>    
+                                </a>
+                                <div class="dangnhap-hover">
+                                    <a href="dangnhap.html" style="padding: 10px 50px;color: #dfe9eb;background-color: #5755FE;border-radius: 10px;font-weight: 700;">Đăng nhập</a>
+                                    
+                                    <a href="dangky.html" style="padding: 10px 50px;color: #5755FE;background-color: #dfe9eb;border-radius: 10px;font-weight: 700;">Đăng ký</a>
+                                    
+                                    <a href="#" style="padding: 10px ;color: #5755FE;background-color: #dfe9eb;border-radius: 10px;font-weight: 700;"><img src="images/google_logo.png" alt="" style="max-width: 10%;">Đăng nhập bằng Google</a>
+                                </div>
+                            </div>
+                            
+                            <a href="giohang.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="39" fill="currentColor" class="bi bi-bag-check-fill" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0m-.646 5.354a.5.5 0 0 0-.708-.708L7.5 10.793 6.354 9.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                              </svg>
+                                <p style="color: #aeadef;font-size: 10px;font-weight: 700;margin: 0px;">Giỏ hàng</p>
+                            </a>
+                            <div class="thongbao">
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="39" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                                      <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901"/>
+                                    </svg>
+                                      <p style="color: #aeadef;font-size: 10px;font-weight: 700;margin: 0px;">Thông báo</p>
+                                      <div class="thongbao-hover">
+                                          <p style="font-weight: 800;">&#128276;Chưa có thông báo mới</p>
+                                      </div>
+                                  </a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="breadcrumb p-0 m-2">
+                <div class="container">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb p-0 m-0">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">flashsale-card</li>
+                            <li class="breadcrumb-item active" aria-current="page">Phiêu lưu kỳ thú</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="product-detail">
+                <div class="container">
+                    <div class="product-essentail">
+                        <div class="product-img">
+                            <div class="hinh">
+                                <div class="right">
+                                    <img src="images/flashsale-card4.jpg" alt="">
+                                    <br>
+                                    <img src="images/flashsale-card4.jpg" alt="" style="margin: 5px 0px;">
+                                    <br>
+                                    <img src="images/hop_nhung_cau_chuyen_phieu_luu_ky_thu.jpg" alt="" style="margin: 5px 0px;">
+                                </div>
+                                <div class="left">
+                                    <img src="images/flashsale-card4.jpg" alt="">
+
+                                </div>
+                                <div class="clear" style="width: 25px;"></div>
+                            </div>
+                            <div class="add-box">
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-cart3 mr-3 mb-1" viewBox="0 0 16 16">
+                                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                                      </svg>Thêm vào giỏ hàng
+                                </button>
+
+                                <button style="background-color: #4942E4; color: aliceblue;">Mua ngay</button>
+                            </div>
+
+                        </div>
+                        <div class="product-essen-detail">
+                            <h3>Hộp Những Câu Chuyện Phiêu Lưu Kỳ Thú 2</h3>
+                            <br>
+                            <p>Nhà xuất bản: <strong>NXB Văn Học</strong></p>
+                            <p>Tác giả: <strong>Nhiều Tác Giả</strong></p>
+                            <p>Hình thức bìa:<strong>Bìa Mềm</strong></p>
+                            <p>Bộ: <strong>Phiêu Lưu Kỳ thú</strong></p>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+                              </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+                              </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+                              </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+                              </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+                              </svg>
+                            <span>(0 đánh giá)</span>
+                            <br>
+                            <br>
+                            <div>
+                                <span class="gia">419.400 đ</span>
+                                <span style="text-decoration: line-through;">699.000</span>
+                                <span class="giam">-40%</span>
+                            </div>
+                            <br>
+
+                            <span>Địa chỉ nhận hàng: </span><a data-toggle="modal" data-target="#mymodal" id="address" style="cursor: pointer;">
+                                Hồ Chí Minh <i class="fa-solid fa-caret-down"></i></a></li>
+                            </a>
+                            <br>
+                            <br>
+                            <span>Số lượng: </span>
+                            <button class="counter-btn" onclick="decrement()">-</button>
+                            <div class="counter" id="counter">1</div>
+                            <button class="counter-btn" onclick="increment()">+</button>
+
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="container">
+                            <div class="product-info-title">
+                                <h3>Thông tin sản phẩm</h3>
+                            </div>
+                            <div class="product-info-content">
+                                <p>Nhà xuất bản: <strong>NXB Văn Học</strong></p>
+                            <p>Tác giả: <strong>Nhiều Tác Giả</strong></p>
+                            <p>Hình thức bìa:<strong>Bìa Mềm</strong></p>
+                            <p>Bộ: <strong>Phiêu Lưu Kỳ</strong></p>
+                                <p>Nhà Cung Cấp:    <strong>Minh Long</strong>	</p>
+                                <p>Kích thước:	 <strong>12.5cm x 11cm x 21cm</strong></p>
+                                <p>Năm XB:   <strong>2022</strong></p>
+                                <span style="color: #aeadef;">Giá sản phẩm trên Tbook.com đã bao gồm thuế theo luật hiện hành. Bên cạnh đó, tuỳ vào loại sản phẩm, hình thức và địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như Phụ phí đóng gói, phí vận chuyển, phụ phí hàng cồng kềnh,...</span>
+                            </div>
+                            <div class="mota">
+                                <h3>Mô tả sản phẩm</h3>
+                                <div>Bộ sách là tuyển tập những tác phẩm nổi tiếng của các tác gia kiệt xuất trong kho tàng văn học kinh điển thế giới. Mỗi tác phẩm có đề tài, cốt truyện cũng như thủ pháp xây dựng hình tượng nhân vật khác nhau, mang đậm dấu ấn riêng của từng tác gia.</div>
+                                <div>Qua bộ sách,bạn đọc sẽ cùng các nhân vật lên rừng, xuống biển, lang thang trong sa mạc hoang vắng, hay nín thở bước vào những góc khuất tối tắm... để dấn thân vào những cuộc phiêu lưu đầy mạo hiểm nhưng cũng không kém phần li kì, hấp dẫn.</div>
+                                <div>Những tác phẩm trong Bộ sách:
+                                    Trên sa mạc và trong rừng thẳm</div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="bantin">
+
+                </div>
+                <div style="display: flex;">
+                    <div class="right">
+                        <div><img src="images/tbook1.png" alt="" class="w-75 ml-5 mb-3"></div>
+                        <div>
+                            Lầu 5, 387-389 Hai Bà Trưng Quận 3 TP HCMCông Ty Cổ Phần Phát Hành Sách TP HCM - FAHASA60 - 62 Lê Lợi, Quận 1, TP. HCM, Việt NamFahasa.com nhận đặt hàng trực tuyến và giao hàng tận nơi. KHÔNG hỗ trợ đặt mua và nhận hàng trực tiếp tại văn phòng cũng như
+                            tất cả Hệ Thống Fahasa trên toàn quốc.
+                        </div>
+                        <img src="images/logo-bo-cong-thuong-da-thong-bao1.png" alt="" class="w-50 m-3">
+                        <div class="icon m-3">
+                            <img src="images/Facebook-on.png" alt="">
+                            <img src="images/Insta-on.png" alt="">
+                            <img src="images/twitter-on.png" alt="">
+                            <img src="images/Youtube-on.png" alt="">
+                            <img src="images/twitter-on.png" alt="">
+                            <img src="images/pinterest-on.png" alt="">
+                        </div>
+                        <div>
+                            <img src="images/android1.png" alt="" style="width: 110px; margin-right: 30px;"><img src="images/appstore1.png" alt="" style="width: 110px;">
+                        </div>
+                    </div>
+
+                    <div class="left">
+                        <div style="display: flex;margin-bottom: 20px;">
+                            <div class="dichvu">
+                                <h6>DỊCH VỤ</h6>
+                                <ul>
+                                    <li><a href="gioithieu.html">Giới thiệu Tbook</a></li>
+                                    <li><a href="gioithieu.html">Điều khoản sử dụng</a></li>
+                                    <li><a href="gioithieu.html">Chính sách bảo mật thông tin cá nhân</a></li>
+                                    <li><a href="gioithieu.html">Chính sách bảo mật thanh toán</a></li>
+                                    <li><a href="gioithieu.html">Hệ thống trung
+                          tâm -
+                      nhà sách</a></li>
+                                </ul>
+                            </div>
+                            <div class="hotro">
+                                <h6>HỖ TRỢ</h6>
+                                <ul>
+                                    <li><a href="#">Chính sách đổi - trả - hoàn tiền</a></li>
+                                    <li><a href="#">Chính sách bảo hành - bồi hoàn</a></li>
+                                    <li><a href="#">Chính sách vận chuyển</a></li>
+                                    <li><a href="#">Chính sách vận chuyển</a></li>
+                                    <li><a href="#">Phương thức thanh
+                        toán và xuất HĐ</a></li>
+                                </ul>
+                            </div>
+                            <div class="taikhoan">
+                                <h6>TÀI KHOẢN CỦA TÔI</h6>
+                                <ul>
+                                    <li><a href="dangnhap.html">Đăng nhập</a></li>
+                                    <li><a href="dangky.html">Đăng ký</a></li>
+                                    <li><a href="dangnhap.html">Quên mật khẩu</a></li>
+                                    <li><a href="dangnhap.html">Thông tin tài khoản</a></li>
+                                    <li><a href="#">Đơn hàng của tôi</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="lienhe" style="margin-bottom: 20px;">
+                            <h6>LIÊN HỆ</h6>
+                            <div style="display: flex;gap: 80px;margin: 20px;">
+                                <div class="vitri">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                          <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                        </svg>
+                                    <span>12, Nguyễn Văn Bảo, Q. Gò Vấp</span>
+                                </div>
+                                <div class="email">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-at-fill" viewBox="0 0 16 16">
+                          <path d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2zm-2 9.8V4.698l5.803 3.546zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.5 4.5 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586zM16 9.671V4.697l-5.803 3.546.338.208A4.5 4.5 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671"/>
+                          <path d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791"/>
+                        </svg>
+                                    <span>sample@gmail.com</span>
+                                </div>
+                                <div class="sdt">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                          <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                        </svg>
+                                    <span>0123456789</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pay">
+                            <h6>PHƯƠNG THỨC THANH TOÁN</h6>
+                            <div style="display: flex;gap: 30px;">
+                                <img src="images/ZaloPay-logo-130x83.png" alt="" style="width: 120px;height: 40px;">
+                                <img src="images/shopeepay_logo.png" alt="" style="width: 96px;height: 44px;">
+                                <img src="images/momopay.png" alt="" style="width: 50px;height: 50px;">
+                                <img src="images/vnpay_logo.png" alt="" style="width:120px;height: 41px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Modal -->
+        <!--modal dia diem-->
+
+        <div id="mymodal" class="modal fade modal_address" role="dialog">
+            <div class="modal-dialog modal_dialog_css">
+                <div class="modal-content">
+                    <div class="modal-header modal_header_css">
+                        <h4 style="width: 100%;" class="text-center">Chọn địa chỉ nhận hàng</h4>
+                        <div class="text-end close"><button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                        </button></div>
+                    </div>
+
+                    <div class="modal-body modal_body_css">
+                        <select name="" id="tinh" style="margin: 0px 10px 10px 0px;">
+                                            <option value="">Chọn tỉnh/thành phố</option>
+                                                <option value="">Hồ Chí Minh</option>
+                                                <option value="">Đà Nẵng</option>
+                                            <option value="">Hà Nội</option>
+                                            </select>
+
+                        <select name="" id="">
+                            <option value="">Chọn quận/huyện</option>
+                            <option value="">Quận 1</option>
+                             <option value="">Quận 2</option>
+                            <option value="">Quận 3</option>
+                                                    </select>
+
+                        <select name="" id="">
+                            <option value="">Chọn phường/xã</option>
+                             <option value="">Phường 1</option>
+                             <option value="">Phường 2</option>
+                            <option value="">Phường 3</option>
+                        </select>
+                    </div>
+
+                    <div class="modal-footer modal_footer_css">
+                        <button class="btn btn-primary xac_nhan_css" data-bs-dismiss="modal" id="xacNhan">Xác
+                                            nhận</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/////////////-->
+    </main>
+    <script src="bootstrap-jquery/bootstrap js/bootstrap.bundle.min.js"></script>
+    <script src="js/home.js"></script>
+</body>
+
+</html>
