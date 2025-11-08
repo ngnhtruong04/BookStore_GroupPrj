@@ -83,8 +83,9 @@ $(document).ready(function() {
         });
 
         $btnBuyNow.on('click', function(){
-            sessionStorage.setItem('tbook_buy_now', JSON.stringify({ ...product, qty: 1 }));
-            window.location.href = 'thanhtoan.html';
+            sessionStorage.setItem('tbook_buy_now', JSON.stringify({ ...product, qty: Math.max(1, parseInt($('#counter').text(),10)||1) }));
+            // Thêm tham số để trang thanh toán biết đây là hành động "Mua ngay"
+            window.location.href = 'thanhtoan.html?buynow=1';
         });
     }
 
@@ -125,7 +126,13 @@ $(document).ready(function() {
         </div>
         <a href="thanhtoan.html"><button style="background-color:#4942E4;color:#fff;padding:10px 16px;border-radius:6px;border:none;">Thanh toán</button></a>`);
 
-        // Handlers
+        // Gỡ bỏ các handler cũ để tránh nhân đôi (khi render lại nhiều lần)
+        $container.off('click', '.qty-inc');
+        $container.off('click', '.qty-dec');
+        $container.off('change', '.qty');
+        $container.off('click', '.remove');
+
+        // Handlers (được bind duy nhất sau mỗi render)
         $container.on('click', '.qty-inc', function(){
             const id = $(this).closest('.cart-item').data('id');
             const items = Cart.read();
@@ -156,7 +163,21 @@ $(document).ready(function() {
         const $list = $('#checkout-items');
         if(!$list.length) return;
         let buyNow = null; try { buyNow = JSON.parse(sessionStorage.getItem('tbook_buy_now')||'null'); } catch(e){}
-        const items = buyNow ? [buyNow] : Cart.read();
+        const cartItems = Cart.read();
+        const params = new URLSearchParams(window.location.search);
+        let items;
+        if(params.get('buynow') === '1' && buyNow){
+            // Trường hợp mua ngay ưu tiên chỉ sản phẩm vừa mua
+            items = [buyNow];
+        } else if(cartItems.length){
+            // Nếu có giỏ hàng dùng giỏ hàng (kể cả khi còn buyNow trong sessionStorage)
+            items = cartItems;
+        } else if(buyNow){
+            // Giỏ rỗng nhưng còn buy now => dùng buy now
+            items = [buyNow];
+        } else {
+            items = [];
+        }
         if(items.length === 0){
             $list.html('<p>Không có sản phẩm để thanh toán.</p>');
             $('#checkout-summary').html('');
@@ -187,9 +208,75 @@ $(document).ready(function() {
             const addr = $.trim($('#address-input').val());
             if(!name || !phone || !addr){ alert('Vui lòng nhập đầy đủ thông tin.'); return; }
             // Success: clear buy-now or cart accordingly
-            if(buyNow){ sessionStorage.removeItem('tbook_buy_now'); }
-            else { Cart.clear(); }
+            const params = new URLSearchParams(window.location.search);
+            if(params.get('buynow') === '1'){ sessionStorage.removeItem('tbook_buy_now'); }
+            else { Cart.clear(); sessionStorage.removeItem('tbook_buy_now'); }
             window.location.href = 'thanhtoan-thanhcong.html';
+        });
+    }
+
+    // ---- Category dropdown injection for pages thiếu markup ----
+    if($('.category-wrapper').length === 0 && $('.header-menu .bi-card-list').length){
+        var $icon = $('.header-menu .bi-card-list').first();
+        $icon.addClass('category-icon');
+        $icon.wrap('<span class="category-wrapper" style="position:relative;display:inline-block;"></span>');
+        var dropdownHtml = '<div class="cat-dropdown" style="position:absolute; top:100%; left:0; background:#fff; border:1px solid #ddd; box-shadow:0 2px 6px rgba(0,0,0,0.15); padding:8px; display:none; z-index:1000;">'
+            + '<ul style="list-style:none;margin:0;padding:0;">'
+            + '<li style="padding:4px 8px;"><a href="manga.html">Manga</a></li>'
+            + '<li style="padding:4px 8px;"><a href="sololeveling.html">Manhwa</a></li>'
+            + '<li style="padding:4px 8px;"><a href="#">Light Novel</a></li>'
+            + '<li style="padding:4px 8px;"><a href="#">Comics</a></li>'
+            + '<li style="padding:4px 8px;"><a href="#">Novel</a></li>'
+            + '</ul></div>';
+        $icon.after(dropdownHtml);
+    }
+
+    // ---- Tìm kiếm sách ----
+    // Dataset đơn giản; có thể mở rộng sau
+    const PRODUCTS = [
+        { id:'giacquan-giaotiep', name:'Tủ Sách Thế Giới Động Vật - Giác Quan Và Giao Tiếp', url:'giacquan-giaotiep.html' },
+        { id:'tuduytichcucdelamgiau', name:'Học cách làm giàu - Tư duy tích cực để thành công', url:'tuduytichcucdelamgiau.html' },
+        { id:'dothai', name:'Phương pháp giáo dục con của người Do Thái', url:'dothai.html' },
+        { id:'phieuluu', name:'[Tập truyện] Phiêu lưu kỳ thú', url:'phieuluu.html' },
+        { id:'cauhoi', name:'Thay đổi câu hỏi thay đổi cuộc', url:'cauhoi.html' },
+        { id:'sololeveling', name:'Solo Leveling', url:'sololeveling.html' }
+    ];
+
+    // Tạo khung gợi ý nếu chưa có
+    if($('.searchbox').length){
+        const $box = $('.searchbox');
+        if($box.find('.search-suggestions').length === 0){
+            $box.css('position','relative');
+            $box.append('<div class="search-suggestions" style="position:absolute;top:42px;left:0;width:100%;background:#fff;border:1px solid #ddd;border-radius:6px;box-shadow:0 2px 6px rgba(0,0,0,0.15);display:none;max-height:260px;overflow:auto;z-index:1200;"></div>');
+        }
+        const $input = $box.find('input[type="text"]').first();
+        const $suggest = $box.find('.search-suggestions');
+
+        function renderSuggestions(query){
+            const q = $.trim(query.toLowerCase());
+            if(!q){ $suggest.hide(); return; }
+            const matches = PRODUCTS.filter(p => p.name.toLowerCase().includes(q));
+            if(matches.length === 0){
+                $suggest.html('<div style="padding:8px;color:#666;">Không tìm thấy</div>').show();
+                return;
+            }
+            $suggest.html(matches.map(m => '<div class="s-item" data-url="'+m.url+'" style="padding:8px;cursor:pointer;">'+m.name+'</div>').join('')).show();
+        }
+
+        $input.on('input', function(){
+            renderSuggestions(this.value);
+        });
+        $input.on('keydown', function(e){
+            if(e.key === 'Enter'){
+                const first = $suggest.find('.s-item').first();
+                if(first.length){ window.location.href = first.data('url'); }
+            }
+        });
+        $suggest.on('click', '.s-item', function(){
+            window.location.href = $(this).data('url');
+        });
+        $(document).on('click', function(e){
+            if(!$(e.target).closest('.searchbox').length){ $suggest.hide(); }
         });
     }
 });
